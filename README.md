@@ -11,3 +11,4 @@
 # 오브젝트 (코드로 이해하는 객체지향 설계)
 **[info](https://wikibook.co.kr/object/) 저: 조영호**
 1. [객체, 설계](https://github.com/Keeplo/book-examples-swift/tree/main/object/chapter01-ticketSeller) - 티켓 판매 애플리케이션
+2. [객체지향 프로그래밍](https://github.com/Keeplo/book-examples-swift/tree/main/object/chapter02-movieReservation) - 영화 예매 시스템
