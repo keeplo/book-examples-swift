@@ -6,7 +6,7 @@
 
 # Index
 
-[오브젝트 - 코드로 이해하는 객체지향 설계](#오브젝트-(코드로-이해하는-객체지향-설계))
+[오브젝트 - 코드로 이해하는 객체지향 설계](#오브젝트-(코드로-이해하는-객체지향-설계))  
 [엘레강트 오브젝트 - 새로운 관점에서 바라본 객체지향](#엘레강트-오브젝트-새로운-관점에서-바라본-객체지향)
 
 # 오브젝트 (코드로 이해하는 객체지향 설계)
@@ -16,5 +16,5 @@
 
 # 엘레강트 오브젝트 (새로운 관점에서 바라본 객체지향)
 **[info](https://jiandson.co.kr/books/120) 저: 조영호**
-1. 출생
-  3. [생성자에 코드르 넣지 마세요](https://github.com/Keeplo/book-examples-swift/tree/main/elegant_object/chapter01_03_constructors_must_be_code_free)
+#### Chapter 1. Birth 출생
+  1.3. [생성자에 코드르 넣지 마세요](https://github.com/Keeplo/book-examples-swift/tree/main/elegant_object/chapter01_03_constructors_must_be_code_free)
