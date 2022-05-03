@@ -2,120 +2,39 @@
 //  main.swift
 //  chapter01-ticketSeller
 //
-//  Created by Yongwoo Marco on 2021/09/23.
+//  Created by Yongwoo Marco on 2022/05/03.
 //
 
 import Foundation
 
-private class main {
-    // MARK: - 기본 구현
-    struct Invitation {
-        private let when: Date = Date()
+// 변동없는 Common 객체
+
+// MARK: - 최초 코드
+
+/*
+struct Invitation {
+    private let _when: Date
+    
+    var when: Date {
+        return self._when
     }
+}
 
-    struct Ticket {
-        private var fee: Int
-
-        func getFee() -> Int {
-            return fee
-        }
+struct Ticket {
+    private let _fee: Int
+    
+    var fee: Int {
+        return self._fee
     }
+}
+*/
 
-    class Bag {
-        private var amount: Int
-        private var invitation: Invitation?
-        private var ticket: Ticket?
+// MARK: - Marco's Swift st Style
 
-        init(amount: Int, invitation: Invitation? = nil, ticket: Ticket? = nil) {
-            self.amount = amount
-            self.invitation = invitation
-            self.ticket = ticket
-        }
+struct Invitation {
+    let dateOfIssue: Date // when 보다는 명사형 발행날짜 - 직관적인 명사형 프로퍼티명으로 변경
+}
 
-        func hasInvitation() -> Bool {
-            return self.invitation != nil
-        }
-
-        func hasTicket() -> Bool {
-            return self.ticket != nil
-        }
-
-        func setTicket(_ newTicket: Ticket) {
-            self.ticket = newTicket
-        }
-
-        func minusAmout(_ minus: Int) {
-            self.amount -= minus
-        }
-
-        func plushAmout(_ plus: Int) {
-            self.amount += plus
-        }
-    }
-
-    struct Audience {
-        private var bag: Bag
-
-        func getBag() -> Bag {
-            return bag
-        }
-    }
-
-    class TicketOffice {
-        private var amount: Int
-        private var tickets: [Ticket]
-
-        init(amount: Int, tickets: Ticket...) {
-            self.amount = amount
-            self.tickets = tickets
-        }
-
-        func getTicket() -> Ticket? {
-            guard !tickets.isEmpty else { return nil }
-            return tickets.removeFirst()
-        }
-
-        func minusAmout(_ minus: Int) {
-            self.amount -= minus
-        }
-
-        func plushAmout(_ plus: Int) {
-            self.amount += plus
-        }
-    }
-
-    class TicketSeller {
-        private var ticketOffice: TicketOffice
-
-        init(ticketOffice: TicketOffice) {
-            self.ticketOffice = ticketOffice
-        }
-
-        func getTicketOffice() -> TicketOffice {
-            return ticketOffice
-        }
-    }
-
-    class Theater {
-        private var ticketseller: TicketSeller
-
-        init(ticketseller: TicketSeller) {
-            self.ticketseller = ticketseller
-        }
-
-        func enter(_ audience: Audience) {
-            guard let ticket = ticketseller.getTicketOffice().getTicket() else {
-                print("남은 티켓이 없습니다.")
-                return
-            }
-
-            if !audience.getBag().hasInvitation() {
-                audience.getBag().minusAmout(ticket.getFee())
-                ticketseller.getTicketOffice().plushAmout(ticket.getFee())
-            }
-
-            audience.getBag().setTicket(ticket)
-        }
-    }
-
+struct Ticket {
+    let fee: Int
 }
