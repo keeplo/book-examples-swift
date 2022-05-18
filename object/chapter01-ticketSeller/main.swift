@@ -29,7 +29,7 @@ struct Ticket {
 }
 */
 
-// MARK: - Marco's Swift st Style
+// MARK: - Marco's Swift Style
 
 struct Invitation {
     let dateOfIssue: Date // when 보다는 명사형 발행날짜 - 직관적인 명사형 프로퍼티명으로 변경
